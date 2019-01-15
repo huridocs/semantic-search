@@ -1,0 +1,12 @@
+{
+        "DEFAULT_MODEL": "hr",
+
+        "PREPROCESSING": {
+            "RM_NUMBERS": false,
+            "LOWER": false
+        },
+
+        "SIMILARITY": {
+            "WEIGHTED_AVG": false
+        }
+}
