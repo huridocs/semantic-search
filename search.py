@@ -42,6 +42,5 @@ if __name__ == '__main__':
             text = f.read()
 
     results = search(arg.search_concept, text)
-    for res in results:
-        print(results)
-
+    for sentence, sim in results:
+        print('{} - {}'.format(round(sim, 4), sentence))
