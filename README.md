@@ -39,9 +39,17 @@ For example:
 
 ### Prerequisites
 
-This code requires Python 3.6 and the Fastext Python wrapper. Follow the installing instructions [here](https://github.com/facebookresearch/fastText/tree/master/python).
+This code requires Python 3.6 and the fastText Python wrapper. Pip is the easiest way to install fastText*:
 
-Install other dependencies with:
+```
+$ git clone https://github.com/facebookresearch/fastText.git
+$ cd fastText
+$ pip install .
+```
+
+For using setuptools to install fastText follow the installing instructions [here](https://github.com/facebookresearch/fastText/tree/master/python).
+
+Install the other dependencies with:
 
 ```
 pip install -r requirements.txt
