@@ -24,18 +24,14 @@ pip install -r requirements.txt
 
 ### Setup
 
-This package comes without a pretrained fastText model. However you can download models of different languages [here](https://fasttext.cc/docs/en/crawl-vectors.html) or use your own model.
-Make sure to create a *models/* directory in the main folder and store its .bin file there
+This package comes with a very small sample model. You can download bigger fastText models based on different languages [here](https://fasttext.cc/docs/en/crawl-vectors.html) or train your own models model.
+Make sure to place them in the  *models/* directory and to add its path in *models.json*.
 
-```
- $ mkdir models
-```
-
-In the *config.json* file change the name of the DEFAULT_MODEL and your processing parameters:
+In the *config.json* file you can change the DEFAULT_MODEL and your processing parameters:
 
 ```
    1 {
-   2         "DEFAULT_MODEL": "hr",
+   2         "DEFAULT_MODEL": "sample",
    3 
    4         "PREPROCESSING": {
    5             "RM_NUMBERS": false,
@@ -88,6 +84,5 @@ For example:
 ```
 $ nose tests/
 ```
-
 
 

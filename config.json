@@ -1,5 +1,5 @@
 {
-        "DEFAULT_MODEL": "hr",
+        "DEFAULT_MODEL": "sample",
 
         "PREPROCESSING": {
             "RM_NUMBERS": false,

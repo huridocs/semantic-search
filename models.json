@@ -1,5 +1,4 @@
 {
-    "wiki+hr": "./models/wiki+hr.bin",
-    "hr": "./models/hr.bin"
+    "sample": "./models/sample.bin"
 }
 
