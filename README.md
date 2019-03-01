@@ -2,11 +2,57 @@
 
 Use word embeddings to search for related concepts in a document.
 
+### Installation
+
+This code requires Python 3.6 and the fastText Python wrapper. Pip is the easiest way to install fastText*:
+
+```
+$ git clone https://github.com/facebookresearch/fastText.git
+$ cd fastText
+$ pip install .
+```
+
+For using setuptools to install fastText follow the installing instructions [here](https://github.com/facebookresearch/fastText/tree/master/python).
+
+Install the other dependencies with:
+
+```
+pip install -r requirements.txt
+```
+
+
+
+### Setup
+
+This package comes without a pretrained fastText model. However you can download models of different languages [here](https://fasttext.cc/docs/en/crawl-vectors.html) or use your own model.
+Make sure to create a *models/* directory in the main folder and store its .bin file there
+
+```
+ $ mkdir models
+```
+
+In the *config.json* file change the name of the DEFAULT_MODEL and your processing parameters:
+
+```
+   1 {
+   2         "DEFAULT_MODEL": "hr",
+   3 
+   4         "PREPROCESSING": {
+   5             "RM_NUMBERS": false,
+   6             "LOWER": false
+   7         },
+   8 
+   9         "SIMILARITY": {
+  10             "WEIGHTED_AVG": false
+  11         }
+  12 }
+```
+
 
 
 ### Get started
 
-After installing the module you can search for a concept in a selected text file with:
+After setting everything up you can search for a concept in a selected text file with:
 
 ```
 $ python search.py [search-concept] [path-to-file]
@@ -37,21 +83,11 @@ For example:
 
 
 
-### Prerequisites
-
-This code requires Python 3.6 and the fastText Python wrapper. Pip is the easiest way to install fastText*:
+### Testing
 
 ```
-$ git clone https://github.com/facebookresearch/fastText.git
-$ cd fastText
-$ pip install .
+$ nose tests/
 ```
 
-For using setuptools to install fastText follow the installing instructions [here](https://github.com/facebookresearch/fastText/tree/master/python).
 
-Install the other dependencies with:
-
-```
-pip install -r requirements.txt
-```
 
