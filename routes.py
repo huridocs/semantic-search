@@ -1,21 +1,22 @@
 from flask import Flask, request, jsonify, make_response
 from search import search
-from systemd import journal
 import time
+import json
 
 app = Flask(__name__)
 
+
 @app.route('/semanticSearch/searchOneDoc', methods=['POST'])
 def search_one_doc():
-    t0 = time.time()
-
     data = json.loads(request.data)
-    search_concept = data['search_concept']
-    doc = data['doc']
+    contents = data['contents']
 
-    sentences = search(search_concept, doc)
-    journal.send('TIME: {}'.format(time-time() - t0))
+    t0 = time.time()
+    res = []
+    for page in contents.keys():
+        page_res = search(data['searchTerm'], contents[page])
+        for sentence, score in page_res:
+            res.append({'page': int(page), 'text': sentence, 'score': score})
 
-    return make_response(jsonify(sentences)), 500
-
-
+    print('TIME: {}'.format(time.time() - t0))
+    return make_response(jsonify(res), 200)
