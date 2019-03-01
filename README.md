@@ -79,6 +79,17 @@ For example:
 
 
 
+### Run Server
+
+To run the semantic search application export the FLASK_APP environment and run flask:
+
+```
+$ export FLASK_APP=routes.py
+$ flask run
+```
+
+
+
 ### Testing
 
 ```
