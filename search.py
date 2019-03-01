@@ -5,12 +5,12 @@ from semantic_search.osHelper import loadJSON
 import argparse
 
 
-def search(search: str, doc: str, model_id: str = None):
+def search(search, doc, model_id=None):
 
     config = loadJSON('config.json')
 
     if not model_id:
-        model_id: str = config['DEFAULT_MODEL']
+        model_id = config['DEFAULT_MODEL']
 
     we = WordEmbedding()
     we.load(model_id)
