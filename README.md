@@ -2,7 +2,9 @@
 
 Use word embeddings to search for related concepts in a document.
 
-### Installation
+
+
+###Installation
 
 This code requires Python 3.6 and the fastText Python wrapper. Pip is the easiest way to install fastText*:
 
@@ -20,12 +22,19 @@ Install the other dependencies with:
 pip install -r requirements.txt
 ```
 
+The NLTK `punkt` package has to be installed manually by running the following commands in the python:
+
+```
+>>> import nltk
+>>> nltk.download('punkt')
+```
+
 
 
 ### Setup
 
-This package comes with a very small sample model. You can download bigger fastText models based on different languages [here](https://fasttext.cc/docs/en/crawl-vectors.html) or train your own models model.
-Make sure to place them in the  *models/* directory and to add its path in *models.json*.
+This package comes with a very small sample model. You can download larger fastText models based on different languages [here](https://fasttext.cc/docs/en/crawl-vectors.html) or train your own model.
+Make sure to place its *.bin* file in the  *models/* directory and to add its path in *models.json*.
 
 In the *config.json* file you can change the DEFAULT_MODEL and your processing parameters:
 
