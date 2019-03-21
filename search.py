@@ -5,9 +5,11 @@ from semantic_search.osHelper import loadJSON
 import argparse
 
 
-def search(search, doc, model_id=None):
+def search(search, doc, model_id=None, config_file=None):
 
-    config = loadJSON('config.json')
+    if not config_file:
+        config_file = 'config.json'
+    config = loadJSON(config_file)
 
     if not model_id:
         model_id = config['DEFAULT_MODEL']
@@ -17,6 +19,7 @@ def search(search, doc, model_id=None):
 
     preprocessor = Preprocessor(config['PREPROCESSING'])
     doc = preprocessor.process(doc)
+
     sentenceTokenizer = SentenceTokenizer()
     sentences = sentenceTokenizer.tokenize(doc)
 
