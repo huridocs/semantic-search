@@ -20,9 +20,20 @@ class Preprocessor:
     def tokenize(self, text: str) -> List[str]:
         return text.split()
 
+    def replace_linebreaks(self, text: str) -> str:
+        replace_double_breaks = re.sub('\n\n', 'xxxx', text)
+        fixed_single_breaks = re.sub('\n', ' ', replace_double_breaks)
+        fixed_double_breaks = re.sub('xxxx', '\n', fixed_single_breaks)
+        return fixed_double_breaks
+
+    def apply_functions(self, text: str, attribute: str) -> str:
+        if self.__getattribute__(attribute):
+            func = self.__getattribute__(attribute.lower())
+            return func(text)
+        return text
+
     def process(self, text: str) -> str:
-        if self.LOWER:
-            text = self.lower(text)
-        if self.RM_NUMBERS:
-            text = self.rm_numbers(text)
+        attributes = self.__dict__.keys()
+        for attribute in attributes:
+            text = self.apply_functions(text, attribute)
         return text

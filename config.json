@@ -3,7 +3,8 @@
 
         "PREPROCESSING": {
             "RM_NUMBERS": false,
-            "LOWER": false
+            "LOWER": false,
+            "REPLACE_LINEBREAKS": true
         },
 
         "SIMILARITY": {
