@@ -14,9 +14,11 @@ def search_one_doc():
     t0 = time.time()
     res = []
     for page in contents.keys():
+        print('NEW PAGE')
         page_res = search(data['searchTerm'], contents[page])
         for sentence, score in page_res:
             res.append({'page': int(page), 'text': sentence, 'score': score})
+        print('\n')
 
-    print('TIME: {}'.format(time.time() - t0))
+    print('TOTAL TIME: {}'.format(time.time() - t0))
     return make_response(jsonify(res), 200)
