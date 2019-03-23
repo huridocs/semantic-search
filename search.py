@@ -6,7 +6,7 @@ import argparse
 import time
 
 
-def search(search_concept, doc, model_id=None, config_file=None):
+def search(search_concept, doc, embedding=None, model_id=None, config_file=None):
 
     t0 = time.time()
     if not config_file:
@@ -18,8 +18,9 @@ def search(search_concept, doc, model_id=None, config_file=None):
     print('LOAD CONFIG:     {}'.format(time.time() - t0))
 
     t0 = time.time()
-    we = WordEmbedding()
-    we.load(model_id)
+    if not embedding:
+        embedding = WordEmbedding()
+        embedding.load(model_id)
     print('LOAD WORD EMBEDDINGS:    {}'.format(time.time() - t0))
 
     t0 = time.time()
@@ -33,15 +34,15 @@ def search(search_concept, doc, model_id=None, config_file=None):
     print('TOKENIZE IN SENTENCES:   {}'.format(time.time() - t0))
 
     t0 = time.time()
-    search_embed = we.embed_sentence(search_concept)
+    search_embed = embedding.embed_sentence(search_concept)
     print('EMBED SEARCH CONCEPT:    {}'.format(time.time() - t0))
 
     t0 = time.time()
-    sentences_embed = [we.embed_sentence(sentence) for sentence in sentences]
+    sentences_embed = [embedding.embed_sentence(sentence) for sentence in sentences]
     print('EMBED SENTENCES:     {}'.format(time.time() - t0))
 
     t0 = time.time()
-    similarities = we.similarity(search_embed, sentences_embed)
+    similarities = embedding.similarity(search_embed, sentences_embed)
     print('COMPUTE SIMILARITIES:     {}'.format(time.time() - t0))
 
     return list(zip(sentences, similarities))
