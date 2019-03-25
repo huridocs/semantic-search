@@ -1,5 +1,9 @@
 from typing import List, Dict
 import re
+from semantic_search.TimeTracker import TimeTracker
+
+
+time_tracker = TimeTracker(True)
 
 
 class Preprocessor:
@@ -32,6 +36,7 @@ class Preprocessor:
             return func(text)
         return text
 
+    @time_tracker.time_track()
     def process(self, text: str) -> str:
         attributes = self.__dict__.keys()
         for attribute in attributes:

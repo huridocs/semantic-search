@@ -3,10 +3,13 @@ import numpy as np
 
 import numpy.core.numeric as _nx
 from nltk.tokenize import word_tokenize
+from semantic_search.TimeTracker import TimeTracker
 import re
 import pdb
 
 LEGAL_ABBREVATIONS = ['chap', 'distr', 'paras', 'cf', 'cfr', 'para', 'no', 'al', 'br', 'dr', 'hon', 'app', 'cr', 'crim', 'l.r', 'cri', 'cap', 'e.g', 'vol', 'd', 'a', 'ph', 'inc.v', 'prof', 'mrs', 'mrt', 'msn', 'mrj', 'msi', 'mrg', 'mra', 'mst', 'mrd', 'pp', 'seq', 'art', 'p', 'nos', 'op', 'i.e', 'tel']
+
+time_tracker = TimeTracker(True)
 
 
 class SentenceTokenizer:
@@ -112,7 +115,7 @@ class SentenceTokenizer:
     def filterForLength(self, sentences):
         return [sentence for sentence in sentences if len(sentence.split()) >= self.MIN_SENTENCE_LENGTH]
 
-
+    @time_tracker.time_track()
     def tokenize(self, text, maxSentenceLength=50, minSentenceLength=5):
         text = self.insertSpaceAfterPunctuation(text)
         text = self.insertNewlineAfterSpeech(text)
