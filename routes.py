@@ -13,7 +13,7 @@ config = loadJSON(CONFIG_FILE)
 embedding = WordEmbedding()
 embedding.load(config['DEFAULT_MODEL'])
 
-time_tracker = TimeTracker(True)
+time_tracker = TimeTracker()
 
 
 @app.route('/semanticSearch/searchOneDoc', methods=['POST'])

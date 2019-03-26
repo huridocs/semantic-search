@@ -9,7 +9,7 @@ import pdb
 
 LEGAL_ABBREVATIONS = ['chap', 'distr', 'paras', 'cf', 'cfr', 'para', 'no', 'al', 'br', 'dr', 'hon', 'app', 'cr', 'crim', 'l.r', 'cri', 'cap', 'e.g', 'vol', 'd', 'a', 'ph', 'inc.v', 'prof', 'mrs', 'mrt', 'msn', 'mrj', 'msi', 'mrg', 'mra', 'mst', 'mrd', 'pp', 'seq', 'art', 'p', 'nos', 'op', 'i.e', 'tel']
 
-time_tracker = TimeTracker(True)
+time_tracker = TimeTracker()
 
 
 class SentenceTokenizer:

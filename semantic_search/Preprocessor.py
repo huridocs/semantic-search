@@ -2,8 +2,7 @@ from typing import List, Dict
 import re
 from semantic_search.TimeTracker import TimeTracker
 
-
-time_tracker = TimeTracker(True)
+time_tracker = TimeTracker()
 
 
 class Preprocessor:

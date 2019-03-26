@@ -6,8 +6,7 @@ import argparse
 import time
 from semantic_search.TimeTracker import TimeTracker
 
-
-time_tracker = TimeTracker(True)
+time_tracker = TimeTracker()
 
 
 @time_tracker.time_track()

@@ -12,7 +12,7 @@ _time_tracker_global_total_times = [0]
 
 
 class TimeTracker:
-    def __init__(self, do_time_tracking=True, isolated=True):
+    def __init__(self, do_time_tracking=False, isolated=True):
         self.logger = Logger()
         self.do_time_tracking = do_time_tracking
 

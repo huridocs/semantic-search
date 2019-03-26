@@ -5,7 +5,7 @@ import fastText
 import numpy as np
 
 
-time_tracker = TimeTracker(True)
+time_tracker = TimeTracker()
 
 
 class WordEmbedding:
