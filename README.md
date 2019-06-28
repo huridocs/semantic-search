@@ -4,7 +4,7 @@ Use word embeddings to search for related concepts in a document.
 
 
 
-###Installation
+### Installation
 
 This code requires Python 3.6 and the fastText Python wrapper. Pip is the easiest way to install fastText*:
 
@@ -75,7 +75,7 @@ If you want to directly pass a text instead of a file add the `--text` flag:
 $ python search.py 'human rights of minorities' 'full text' --text
 ```
 
-The algorithm return for each sentence a value that indicates its similar with the search concept. The higher the value the more similar they are.
+The algorithm returns for each sentence a value that indicates its similar with the search concept. The higher the value the more similar they are.
 
 For example:
 
@@ -104,5 +104,14 @@ $ flask run
 ```
 $ nose tests/
 ```
+
+
+
+### Packaging
+Packaging semantic  search into a wheel can be done with
+```$ python setup.py bdist bdist_wheel```
+
+The wheel file is then stored in the *dist* folder and can be installed with
+```$ pip install semantic_search-<VERSION>-py3-none-any.whl```
 
 
