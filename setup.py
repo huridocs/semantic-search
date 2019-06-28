@@ -12,11 +12,12 @@ setup(
         include_package_data=True,
 
         install_requires=[
+            "fasttext==0.9.1",
             "mypy==0.641",
             "nltk==3.4",
             "mypy-extensions==0.4.1",
             "numpy==1.15.4",
-            "pybind11==2.2.4",
+            "pybind11==2.3.0",
             "typed-ast==1.1.0"
             ],
         )
