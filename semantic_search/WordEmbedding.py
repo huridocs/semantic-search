@@ -1,7 +1,7 @@
 from typing import List
 from semantic_search.osHelper import loadJSON
 from semantic_search.TimeTracker import TimeTracker
-import fastText
+import fasttext
 import numpy as np
 
 
@@ -17,7 +17,7 @@ class WordEmbedding:
     def load(self, model_id: str):
         config = loadJSON('models.json')
         model_path: str = config[model_id]
-        self.model = fastText.load_model(model_path)
+        self.model = fasttext.load_model(model_path)
 
     def embed_sentence(self, sentence: str):
         tokens = sentence.split()
