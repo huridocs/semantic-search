@@ -11,7 +11,7 @@ CONFIG_FILE = 'config.json'
 config = loadJSON(CONFIG_FILE)
 
 embedding = WordEmbedding()
-embedding.load(config['DEFAULT_MODEL'])
+embedding.load(model_id=config['DEFAULT_MODEL'])
 
 time_tracker = TimeTracker()
 

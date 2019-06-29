@@ -14,9 +14,10 @@ class WordEmbedding:
         pass
 
     @time_tracker.time_track()
-    def load(self, model_id: str):
-        config = loadJSON('models.json')
-        model_path: str = config[model_id]
+    def load(self, model_id: str = 'sample', model_path: str = None):
+        if model_path is None:
+            config = loadJSON('models.json')
+            model_path: str = config[model_id]
         self.model = fasttext.load_model(model_path)
 
     def embed_sentence(self, sentence: str):
