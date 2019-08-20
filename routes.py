@@ -27,6 +27,6 @@ def search_one_doc():
         print('Page {}'.format(page))
         page_res = search(data['searchTerm'], contents[page], embedding)
         for sentence, score in page_res:
-            res.append({'page': int(page), 'text': sentence, 'score': score})
+            res.append({'page': page, 'text': sentence, 'score': score})
         print('')
     return make_response(jsonify(res), 200)
