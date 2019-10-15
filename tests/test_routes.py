@@ -28,7 +28,7 @@ class TestRoutes(unittest.TestCase):
 
         texts = ' '.join(list(map(lambda x: x['text'], data)))
         pages = list(map(lambda x: x['page'], data))
-        self.assertEqual(pages, [1, 1, 2, 2, 2])
+        self.assertEqual(pages, ['1', '1', '2', '2', '2'])
         self.assertEqual(texts, ' '.join([first_page, second_page]))
 
 
