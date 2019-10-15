@@ -29,8 +29,8 @@ def search(search_concept, doc, embedding=None, model_id=None, config_file=None)
     sentenceTokenizer = SentenceTokenizer()
     sentences = sentenceTokenizer.tokenize(doc)
 
-    sentences_embed = embedding.embed_sentences(sentences + [search_concept])
-    search_embed = sentences_embed[-1]
+    sentences_embed = embedding.embed_sentences(sentences, config['SIMILARITY']['SLIDING_WINDOW'])
+    search_embed = embedding.embed_sentence(search_concept)[0]
 
     similarities = embedding.similarity(search_embed, sentences_embed)
 

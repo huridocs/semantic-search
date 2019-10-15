@@ -1,5 +1,5 @@
 {
-        "DEFAULT_MODEL": "sample",
+        "DEFAULT_MODEL": "columbia_hrc_echr",
 
         "PREPROCESSING": {
             "RM_NUMBERS": false,
@@ -8,6 +8,7 @@
         },
 
         "SIMILARITY": {
-            "WEIGHTED_AVG": false
+            "WEIGHTED_AVG": false,
+            "SLIDING_WINDOW": 4
         }
 }
