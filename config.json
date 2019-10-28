@@ -1,5 +1,5 @@
 {
-        "DEFAULT_MODEL": "columbia_hrc_echr",
+        "DEFAULT_MODEL": "sample",
 
         "PREPROCESSING": {
             "RM_NUMBERS": false,
