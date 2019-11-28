@@ -3,6 +3,14 @@
 Use word embeddings to search for related concepts in a document.
 
 
+### Running with docker
+
+Install docker and docker-compose
+
+Run
+
+`docker-compose up`
+
 
 ### Installation
 
