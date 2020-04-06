@@ -8,7 +8,6 @@
         },
 
         "SIMILARITY": {
-            "WEIGHTED_AVG": false,
             "SLIDING_WINDOW": 4
         }
 }
