@@ -24,9 +24,9 @@ class Preprocessor:
         return text.split()
 
     def replace_linebreaks(self, text: str) -> str:
-        replace_double_breaks = re.sub('\n\n', 'xxxx', text)
-        fixed_single_breaks = re.sub('\n', ' ', replace_double_breaks)
-        fixed_double_breaks = re.sub('xxxx', '\n', fixed_single_breaks)
+        replace_double_breaks = re.sub(r'\n\n', 'xxxx', str(text))
+        fixed_single_breaks = re.sub(r'\n', ' ', str(replace_double_breaks))
+        fixed_double_breaks = re.sub(r'xxxx', '\n', str(fixed_single_breaks))
         return fixed_double_breaks
 
     def apply_functions(self, text: str, attribute: str) -> str:
