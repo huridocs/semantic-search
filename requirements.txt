@@ -1,7 +1,7 @@
 fasttext==0.9.1
 mypy==0.641
 mypy-extensions==0.4.1
-nltk==3.4
+nltk==3.6.3
 numpy==1.15.4
 pybind11==2.3.0
 typed-ast==1.1.0
