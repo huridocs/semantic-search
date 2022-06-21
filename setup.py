@@ -16,7 +16,7 @@ setup(
             "mypy==0.641",
             "nltk==3.4",
             "mypy-extensions==0.4.1",
-            "numpy==1.15.4",
+            "numpy==1.22.0",
             "pybind11==2.3.0",
             "typed-ast==1.1.0"
             ],
